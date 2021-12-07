@@ -1,7 +1,5 @@
-const store = require('./store');
+const { requestContext } = require('fastify-request-context');
 
 module.exports = async () => {
-  store.enterWith({
-    stamp: Date.now(),
-  });
+  requestContext.set('stamp', Date.now());
 };

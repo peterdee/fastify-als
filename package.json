@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^3.24.1"
+    "fastify": "^3.24.1",
+    "fastify-request-context": "^2.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

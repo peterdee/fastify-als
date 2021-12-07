@@ -1,14 +1,10 @@
-const store = require('./store');
+const { requestContext } = require('fastify-request-context');
 
-module.exports = async (_, reply) => {
+module.exports = async () => {
   const delay = Math.random();
 
   await new Promise((resolve) => setTimeout(resolve, delay));
 
-  const oldStore = store.getStore();
-  store.enterWith({
-    ...oldStore,
-    customValue: delay,
-  });
+  requestContext.set('customValue', delay);
   return;
 };
